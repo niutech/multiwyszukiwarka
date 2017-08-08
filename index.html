@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="description" content="Szukaj produktów i porównuj ceny na Allegro, OLX, Nokaut obok siebie">
 	<title>Wyszukiwarka produktów na Allegro, OLX, eBay</title>
 	<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 	<form action="" method="get">
 		<h1>Wyszukiwarka produktów na Allegro, OLX, eBay</h1>
@@ -30,15 +28,13 @@
 		if (q && o) {
 			document.getElementById('q').value = decodeURIComponent(q.replace('+', ' '));
 			document.getElementById('o').value = o;
-			var allegro = 'http://allegro.pl/listing/listing.php?order=' + (o == 12 ? 'm' : (o == 15 ? 'd' : 'dd')) + '&string=' + q;
-			var olx = 'http://olx.pl/m/oferty/q-' + q.replace('+', '-') + '/?search[order]=' + (o == 12 ? 'created_at%3Adesc' : 'filter_float_price%3A' + (o == 15 ? 'asc' : 'desc'));
-			var ebay = 'http://www.ebay.pl/sch/i.html?_sop=' + o + '&_nkw=' + q;
+			var allegro = 'https://allegro.pl/listing/listing.php?order=' + (o == 12 ? 'm' : (o == 15 ? 'd' : 'dd')) + '&string=' + q;
+			var olx = 'https://www.olx.pl/m/oferty/q-' + q.replace('+', '-') + '/?search[order]=' + (o == 12 ? 'created_at%3Adesc' : 'filter_float_price%3A' + (o == 15 ? 'asc' : 'desc'));
+			var ebay = 'https://www.ebay.pl/sch/i.html?_sop=' + o + '&_nkw=' + q;
 			loadURL(allegro, 0);
 			loadURL(olx, 1);
 			loadURL(ebay, 2);
 		}
 	</script>
-
 </body>
-
 </html>
